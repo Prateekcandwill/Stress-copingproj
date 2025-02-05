@@ -1,0 +1,287 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SRRS Stress Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-blue-600 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">SRRS Stress Calculator</h1>
+            <nav>
+                <ul class="flex space-x-4">
+                    <li><a href="#" class="hover:underline">Home</a></li>
+                    <li><a href="#" class="hover:underline">About</a></li>
+                    <li><a href="#" class="hover:underline">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-4">
+        <section class="bg-white p-6 rounded shadow-md">
+            <h2 class="text-xl font-bold mb-4">Calculate Your Stress Level</h2>
+            <form id="stress-form">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event1" name="event1" class="mr-2">
+                        <label for="event1" class="text-gray-700">Death of a spouse (100 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event2" name="event2" class="mr-2">
+                        <label for="event2" class="text-gray-700">Divorce (73 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event3" name="event3" class="mr-2">
+                        <label for="event3" class="text-gray-700">Marital separation (65 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event4" name="event4" class="mr-2">
+                        <label for="event4" class="text-gray-700">Jail term (63 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event5" name="event5" class="mr-2">
+                        <label for="event5" class="text-gray-700">Death of a close family member (63 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event6" name="event6" class="mr-2">
+                        <label for="event6" class="text-gray-700">Personal injury or illness (53 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event7" name="event7" class="mr-2">
+                        <label for="event7" class="text-gray-700">Marriage (50 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event8" name="event8" class="mr-2">
+                        <label for="event8" class="text-gray-700">Fired at work (47 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event9" name="event9" class="mr-2">
+                        <label for="event9" class="text-gray-700">Marital reconciliation (45 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event10" name="event10" class="mr-2">
+                        <label for="event10" class="text-gray-700">Retirement (45 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event11" name="event11" class="mr-2">
+                        <label for="event11" class="text-gray-700">Change in health of family member (44 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event12" name="event12" class="mr-2">
+                        <label for="event12" class="text-gray-700">Pregnancy (40 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event13" name="event13" class="mr-2">
+                        <label for="event13" class="text-gray-700">Sexual difficulties (39 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event14" name="event14" class="mr-2">
+                        <label for="event14" class="text-gray-700">Gain of a new family member (39 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event15" name="event15" class="mr-2">
+                        <label for="event15" class="text-gray-700">Business readjustment (39 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event16" name="event16" class="mr-2">
+                        <label for="event16" class="text-gray-700">Change in financial state (38 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event17" name="event17" class="mr-2">
+                        <label for="event17" class="text-gray-700">Death of a close friend (37 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event18" name="event18" class="mr-2">
+                        <label for="event18" class="text-gray-700">Change to different line of work (36 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event19" name="event19" class="mr-2">
+                        <label for="event19" class="text-gray-700">Change in number of arguments with spouse (35 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event20" name="event20" class="mr-2">
+                        <label for="event20" class="text-gray-700">Mortgage over $20,000 (31 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event21" name="event21" class="mr-2">
+                        <label for="event21" class="text-gray-700">Foreclosure of mortgage or loan (30 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event22" name="event22" class="mr-2">
+                        <label for="event22" class="text-gray-700">Change in responsibilities at work (29 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event23" name="event23" class="mr-2">
+                        <label for="event23" class="text-gray-700">Son or daughter leaving home (29 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event24" name="event24" class="mr-2">
+                        <label for="event24" class="text-gray-700">Trouble with in-laws (29 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event25" name="event25" class="mr-2">
+                        <label for="event25" class="text-gray-700">Outstanding personal achievement (28 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event26" name="event26" class="mr-2">
+                        <label for="event26" class="text-gray-700">Spouse begins or stops work (26 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event27" name="event27" class="mr-2">
+                        <label for="event27" class="text-gray-700">Starting or finishing school (26 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event28" name="event28" class="mr-2">
+                        <label for="event28" class="text-gray-700">Change in living conditions (25 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event29" name="event29" class="mr-2">
+                        <label for="event29" class="text-gray-700">Revision of personal habits (24 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event30" name="event30" class="mr-2">
+                        <label for="event30" class="text-gray-700">Trouble with boss (23 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event31" name="event31" class="mr-2">
+                        <label for="event31" class="text-gray-700">Change in work hours or conditions (20 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event32" name="event32" class="mr-2">
+                        <label for="event32" class="text-gray-700">Change in residence (20 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event33" name="event33" class="mr-2">
+                        <label for="event33" class="text-gray-700">Change in schools (20 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event34" name="event34" class="mr-2">
+                        <label for="event34" class="text-gray-700">Change in recreation (19 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event35" name="event35" class="mr-2">
+                        <label for="event35" class="text-gray-700">Change in church activities (19 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event36" name="event36" class="mr-2">
+                        <label for="event36" class="text-gray-700">Change in social activities (18 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event37" name="event37" class="mr-2">
+                        <label for="event37" class="text-gray-700">Mortgage or loan under $20,000 (17 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event38" name="event38" class="mr-2">
+                        <label for="event38" class="text-gray-700">Change in sleeping habits (16 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event39" name="event39" class="mr-2">
+                        <label for="event39" class="text-gray-700">Change in number of family get-togethers (15 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event40" name="event40" class="mr-2">
+                        <label for="event40" class="text-gray-700">Change in eating habits (15 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event41" name="event41" class="mr-2">
+                        <label for="event41" class="text-gray-700">Vacation (13 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event42" name="event42" class="mr-2">
+                        <label for="event42" class="text-gray-700">Christmas (12 points)</label>
+                    </div>
+                    <div class="flex items-center bg-gray-200 p-4 rounded">
+                        <input type="checkbox" id="event43" name="event43" class="mr-2">
+                        <label for="event43" class="text-gray-700">Minor violations of the law (11 points)</label>
+                    </div>
+                </div>
+                <button type="button" onclick="calculateStress()" class="bg-blue-600 text-white px-4 py-2 rounded mt-4">Calculate</button>
+            </form>
+            <div id="result" class="mt-4 text-lg font-bold"></div>
+        </section>
+    </main>
+
+    <footer class="bg-blue-600 text-white p-4 mt-8">
+        <div class="container mx-auto text-center">
+            <p>&copy; 2023 SRRS Stress Calculator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function calculateStress() {
+            const points = {
+                event1: 100,
+                event2: 73,
+                event3: 65,
+                event4: 63,
+                event5: 63,
+                event6: 53,
+                event7: 50,
+                event8: 47,
+                event9: 45,
+                event10: 45,
+                event11: 44,
+                event12: 40,
+                event13: 39,
+                event14: 39,
+                event15: 39,
+                event16: 38,
+                event17: 37,
+                event18: 36,
+                event19: 35,
+                event20: 31,
+                event21: 30,
+                event22: 29,
+                event23: 29,
+                event24: 29,
+                event25: 28,
+                event26: 26,
+                event27: 26,
+                event28: 25,
+                event29: 24,
+                event30: 23,
+                event31: 20,
+                event32: 20,
+                event33: 20,
+                event34: 19,
+                event35: 19,
+                event36: 18,
+                event37: 17,
+                event38: 16,
+                event39: 15,
+                event40: 15,
+                event41: 13,
+                event42: 12,
+                event43: 11
+            };
+
+            let totalPoints = 0;
+            for (const [key, value] of Object.entries(points)) {
+                if (document.getElementById(key).checked) {
+                    totalPoints += value;
+                }
+            }
+
+            let resultText = '';
+            if (totalPoints < 150) {
+                resultText = `Your score is ${totalPoints}. You have a relatively low amount of life change and a low susceptibility to stress-induced health breakdown.`;
+            } else if (totalPoints < 300) {
+                resultText = `Your score is ${totalPoints}. You have a 50% chance of a major health breakdown in the next 2 years.`;
+            } else {
+                resultText = `Your score is ${totalPoints}. You have an 80% chance of a major health breakdown in the next 2 years.`;
+            }
+
+            document.getElementById('result').innerText = resultText;
+        }
+    </script>
+</body>
+</html>
